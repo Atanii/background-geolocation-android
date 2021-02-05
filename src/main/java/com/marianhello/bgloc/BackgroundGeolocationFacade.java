@@ -306,6 +306,7 @@ public class BackgroundGeolocationFacade {
             promise.await();
             Location location = promise.get();
             if (location != null) {
+                forceSync();
                 return BackgroundLocation.fromLocation(location);
             }
 
